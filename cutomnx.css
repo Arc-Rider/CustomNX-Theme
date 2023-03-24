@@ -3,3 +3,6 @@
     color: white;
     box-sizing: border-box;
 }
+.bg-dark-subtle {
+    background-color: black;
+}
