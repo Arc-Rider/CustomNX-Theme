@@ -1,0 +1,41 @@
+let css := html("
+<style type='text/css'>
+
+.bg-dark-subtle {
+  background-color: black !important;
+}
+.bg-primary {
+	background:yellow!important;
+}
+</style>
+");
+html(---
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>{ css }
+<div class="container bg-dark-subtle h-100">
+	<div class="row h-100">
+<!-- NAVIGATION -->
+		<div class="flex-column { if fullNav = true then }col-5{  else }{ if fullNav = false then }col-1{  else }{  end }{  end } px-2">
+					<div class="arc-nav-header container">
+						<div class="arc-nav-header navbar-brand">
+							<img src="{ if fullNav = true then }{ logoL }{  else }{ if fullNav = false then }{ logoS }{  else }{  end }{  end }" width="{ if fullNav = true then }300{  else }{ if fullNav = false then }60{  else }{  end }{  end }" height="{ if fullNav = true then }auto{  else }{ if fullNav = false then }60{  else }{  end }{  end }"></div>
+						</div>
+					</div>
+				
+					<!-- FOR EACH --> { for nav in select 'Liste Dashboards' do }
+					
+    				<div class="arc-nav-content">{ iconPhosphor("shopping-cart-simple", "#FFFFFF", 17, 20) }{ nav.Titel }</div>{ end }
+     			<div class="arc-nav-footer">User</div>
+		</div>
+<!-- MIDDLE PART -->
+		<div class="col">
+		</div>
+<!-- RIGHT PART -->
+		<div class="col">
+		</div>
+	</div>
+</div>
+
+
+</div>
+---)
