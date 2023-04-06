@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../NX Custom"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "CustomNX-Theme"
+	}
+}
